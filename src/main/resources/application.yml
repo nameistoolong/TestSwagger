@@ -1,0 +1,32 @@
+# 开发环境配置
+server:
+  # 服务器的HTTP端口
+  port: 8085
+
+  # 日志配置
+  logging:
+    level:
+      com.test.rooming: debug
+      org.springframework: warn
+
+spring:
+  profiles:
+    active: dev
+  # 服务模块
+  devtools:
+    restart:
+      # 热部署开关
+      enabled: true
+
+# MyBatis-plus
+mybatis-plus:
+  # 搜索指定包别名
+  typeAliasesPackage: com.test.rooming
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath:mapper/**/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: AUTO
+      capitalMode: true
+  configuration:
+    cache-enabled: false
